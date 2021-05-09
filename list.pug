@@ -1,0 +1,21 @@
+extends layout
+block content
+	h1 Lista
+	table
+		tr
+			th Lp
+			th Nazwa
+			th Paliwo
+			th Rok
+			th Edytuj
+			th Usuń
+		each car, index in carsList
+			tr
+				td=index+1
+				td=car.name
+				td=car.fuel
+				td=car.year
+				td
+					a(href="/edit/"+car.id) edytuj
+				td
+					a(href="/delete/"+car.id) usuń
